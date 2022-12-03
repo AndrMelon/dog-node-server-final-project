@@ -41,6 +41,7 @@ const MoviesController = (app) => {
     app.get   ('/movies', findAllMovies)
     app.put   ('/movies/:mid', updateMovie)
     app.delete('/movies/:mid', deleteMovie)
+
 }
 
 export default MoviesController;
