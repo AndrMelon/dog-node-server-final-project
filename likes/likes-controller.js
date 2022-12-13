@@ -1,12 +1,12 @@
-import {getMovies} from "../movies/movies-controller.js";
+import { getMovies } from "../movies/movies-controller.js";
 import users from "../users/users.js";
 import * as likesDao from "./likes-dao.js";
 
 let likes = [
-    {_id: '123', user: '111', movie: '123'},
-    {_id: '234', user: '111', movie: '234'},
-    {_id: '345', user: '222', movie: '345'},
-    {_id: '456', user: '333', movie: '345'},
+    { _id: '123', user: '111', movie: '123' },
+    { _id: '234', user: '111', movie: '234' },
+    { _id: '345', user: '222', movie: '345' },
+    { _id: '456', user: '333', movie: '345' },
 ]
 
 const LikesController = (app) => {
@@ -24,11 +24,11 @@ const LikesController = (app) => {
         })
         return populatedResults
     }
-    const userLikesMovie = async (req, res) => {
+    const userLikesDog = async (req, res) => {
         const uid = req.params.uid
-        const mid = req.params.mid
+        const did = req.params.did
 
-        const newLike = await likesDao.userLikesMovie(uid, mid)
+        const newLike = await likesDao.userLikesDog(uid, did)
         // likes.push(newLike)
         res.json(newLike)
     }
@@ -72,7 +72,7 @@ const LikesController = (app) => {
         // res.json(populateUsers)
     }
 
-    app.post('/users/:uid/likes/:mid', userLikesMovie)
+    app.post('/users/:uid/likes/:did', userLikesDog)
     app.delete('/users/:uid/unlikes/:mid', userUnlikesMovie)
     app.get('/likes', findAllLikes)
     app.get('/users/:uid/likes', findMoviesLikedByUser)

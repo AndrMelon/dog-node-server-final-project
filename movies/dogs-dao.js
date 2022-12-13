@@ -12,4 +12,4 @@ export const deleteDog = async (url) => {
     const status = await dogsModel.deleteOne({ _id: mid })
     return status
 }
-export const updateMovie = () => { }
+export const updateDog = () => { }
