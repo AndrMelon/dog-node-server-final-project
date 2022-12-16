@@ -10,8 +10,8 @@ export const findDogById = async (did) => {
     return dog
 }
 
-export const createDog = async (movie) => {
-    const actualInsertedDog = await dogsModel.create(movie)
+export const createDog = async (dog) => {
+    const actualInsertedDog = await dogsModel.create(dog)
     return actualInsertedDog
 }
 export const deleteDog = async (did) => {
